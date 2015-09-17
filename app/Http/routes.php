@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', array('as' => 'home', function()
+{
+
+    return View::make('home');
+
+}));
+
+Route::get('/permohonan', [
+    'as'        =>  'permohonan.index',
+    'uses'  =>  'PermohonanController@index'
+]);
